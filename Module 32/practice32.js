@@ -88,15 +88,44 @@ console.log(`Three Number Multiplication result is:`, trioNumberMultiplication(2
 
 //TODO  ৩.৪ এইবার দুইটা প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন নিবে। ওই arrow ফাংশনটা হবে অনেকগুলা লাইনের। সেখানে প্রত্যেকটা ইনপুট প্যারামিটার এর সাথে ২ যোগ করবে তারপর যোগফল দুইটা গুণ করবে। ক্যামনে করবে সেটা চিন্তা করে বের করার চেষ্টা করো। 
 
+//! Solution:
 
+const arrowWthTwoParm = (parm1,parm2) => {
+  const firstAdd = parm1+2;
+  const secondAdd = parm2+2;
+  const total = firstAdd * secondAdd;
+  return total;
+}
+
+console.log("arrowWithTwoParm:", arrowWthTwoParm(3,4));
 
 //TODO  ৪. [হোম ওয়ার্ক] একটু গুগলে সার্চ দাও: javascript function declaration vs arrow function তারপর কয়েকটা আর্টিকেল পড়ে বুঝার চেষ্টা করো। 
 
+//! Solution:
+//? regular function syntax  const regularFunction = function function_name(parameter){//body of function};
+//? arrow function syntax  const arrow_function = (parameter) => {//body of function};
+//? regular function has their this keyword, arrow function doesn't have their this keyword.
+//? Arguments objects are not available in arrow functions, but are available in regular functions.
+//? regular function are callable and constructiable so new keyword can be used to create new objects in arguments objects whereas arrow function are callable but not constructiable. so new keyword show a run-time error on try to construct an object.
+//? coinstructiable means 
+function arg(){
+  console.log(arguments);
+}
+arg(1,2,3,4);
 
+ const arrowArg = () => console.log(...arguments);
+ console.log(arrowArg(1,2,3));
 
 
 //TODO  ৪.৫. [এক্সট্রা আরেকটা হোম ওয়ার্ক। এইটা ভিডিওতে বলা নাই]: জাভাস্ক্রিপ্ট এর var, let, const এর মধ্যে প্রার্থক্য কি? 
 
+//! Solution:
+
+//? var origin before ES2015, let and const are introduced in ES2015
+//? var is function scoped attached to window object, let and const are block scoped or global scoped any one scope
+//? var is hoisted to the top of its execution and initialized as undefined. Whereas let and const are hoisted to the top of their block and left uninitialized.
+//? var can be redeclared within th scope, let and const cannot be redeclared witin the same scope.
+//? var and let can be reassigned within the scope, const cannot be reassigned within the scope.
 
 
 //TODO  ৫. অনেকগুলা সংখ্যার একটা array হবে। তারপর তোমার কাজ হবে array এর উপরে map ইউজ করে। প্রত্যেকটা উপাদানকে ৫ দিয়ে গুন্ করে গুনফল আরেকটা array হিসেবে রাখবে। পুরা কাজটা এক লাইনে হবে। 
@@ -154,12 +183,23 @@ console.log(findingPriceFromArray);
 The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
 
 /////! FOR EACH /////
+The forEach() method executes a provided function once for each array element. but return nothing
 
 /////! FILTER /////
-
+The filter() method creates a new array with all elements that pass the test implemented by the provided function.
 /////! FIND /////
-
+The find() method returns the value of the first element in the provided array that satisfies the provided testing function.
  */
+
+const mapRandom = arrayOfRandomNum.map(num => num*0.5);
+const filterRandom = arrayOfRandomNum.filter(num => num>50);
+const findRandom = arrayOfRandomNum.find(num => num>80);
+const forEachRandom = arrayOfRandomNum.forEach((number) => console.log(number))
+console.log("Maping:", mapRandom);
+console.log("For Each:", forEachRandom);
+console.log("Filter:", filterRandom);
+console.log("Find:", findRandom);
+
 //TODO  ৮. সিম্পল একটা জাভাস্ক্রিপ্ট অবজেক্ট এর কোন একটা প্রোপার্টিকে ভেরিয়েবল হিসেবে ডিক্লেয়ার করার জন্য destructuring ইউজ করো। 
 
 //! Solution:
