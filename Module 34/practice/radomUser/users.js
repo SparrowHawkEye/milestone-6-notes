@@ -4,13 +4,11 @@ const loadUsers = async () => {
   const data = await res.json()
   displayUser(data)
 }
-
-
 function displayUser (data){
     const userInfo = data.results[0];
     const userContainer = document.getElementById('user-container')
     userContainer.innerHTML = "";
-  
+
   const userInfoDiv = document.createElement('div')
   const lists = ["card", "mb-3", "p-5", "w-75"]
   userInfoDiv.classList.add(...lists);
@@ -28,17 +26,16 @@ function displayUser (data){
       <h5 class="card-title">${userInfo.name.title} ${userInfo.name.first} ${userInfo.name.last}</h5>
       <div class="card-text">
         Gender : ${(userInfo.gender)} <br />
-        Country : France <br />
-        City : Courbevoie <br />
-        Phone : 01-27-21-38-92 <br />
-        userName : "tinyostrich391"
+        Country : ${(userInfo.location.country)} <br />
+        City : ${(userInfo.location.city)} <br />
+        Phone : ${(userInfo.phone)} <br />
+        userName : "${(userInfo.login.username)}"
       </div>
     </div>
   </div>
 </div>
   `
   userContainer.appendChild(userInfoDiv)
-  console.log(data.results[0]);
-  console.log(userInfoDiv);
-
+  // console.log(data.results[0]);
+  // console.log(userInfoDiv);
 }
