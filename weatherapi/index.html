@@ -20,6 +20,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <main>
@@ -44,52 +45,14 @@
           Search
         </button>
       </div>
+      <div class="text-center" id="spinner">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
       <div class="card mx-auto text-center" style="width: 18rem">
         <div class="card-header">Weather of Location</div>
-        <ul class="list-group list-group-flush">
-          <li
-            class="list-group-item d-flex align-items-center justify-content-between"
-          >
-            <i class="fa-solid fa-temperature-high"></i>
-            <span>High</span> <span>86°</span>
-          </li>
-          <li
-            class="list-group-item d-flex align-items-center justify-content-between"
-          >
-            <i class="fa-solid fa-temperature-low"></i>
-            <span>Low</span> <span>60°</span>
-          </li>
-          <li
-            class="list-group-item d-flex align-items-center justify-content-between"
-          >
-            <i class="fa-solid fa-smog"></i>
-            <span>Humidity</span> <span>56%</span>
-          </li>
-          <li
-            class="list-group-item d-flex align-items-center justify-content-between"
-          >
-            <i class="fa-solid fa-eye"></i>
-            <span>Visibility</span><span>2 mi</span>
-          </li>
-          <li
-            class="list-group-item d-flex align-items-center justify-content-between"
-          >
-            <i class="fa-thin fa-angles-down"></i>
-            <span>Pressure</span><span>30.1 in</span>
-          </li>
-          <li
-            class="list-group-item d-flex align-items-center justify-content-between"
-          >
-            <i class="fa-solid fa-wind"></i>
-            <span>Wind</span><span>1 mph</span>
-          </li>
-          <li
-            class="list-group-item d-flex align-items-center justify-content-between"
-          >
-            <i class="fa-solid fa-cloud"></i>
-            <span>Clouds</span><span>18</span>
-          </li>
-        </ul>
+        <ul class="list-group list-group-flush" id="weather-list"></ul>
       </div>
     </main>
 
